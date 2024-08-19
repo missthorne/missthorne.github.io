@@ -1,9 +1,84 @@
 <!DOCTYPE html>
+
 <body>
+	<style>
+
+/* Universal Styling */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Container for all the elements */
+.container {
+  width: 100%;
+  min-height: 100vh;
+  padding: 10px;
+  background-color: #EEE;
+  color: #333;
+  transition: all 0.4s ease-out;
+}
+	.center {
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+		width: 50%;
+	}
+#toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: #333;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  transition: all 0.5s ease-in;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Making a dot switch inside the Toggle Button */
+#toggle::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #EEE;
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  transform: translateY(-50%);
+  transition: all 0.5s ease-in;
+}
+
+/* Changing toggle button background when checked */
+#toggle:checked {
+  background: #03FFC0;
+}
+
+/* Changing dot switch color and moving to the right side when checked */
+#toggle:checked::before {
+  background: #333;
+  left: 32px;
+}
+#toggle:checked ~ .container {
+  background-color: #333;
+  color: #EEE;
+}
+	ul {
+	padding-left: 10px
+	}
+	</style>
+      <input type="checkbox" id="toggle">
+	<div class="container">
 	<h1>This is Ruby's Github Pages</h1>
 	<hr>
 	<h2>I was forced to make this page as a part of the programming course</h2>
-	<p>I am not a big fan of html, nor css - webdesign might as well be the worst thing that has ever happened to me, but alas</p>
+	<p>I am not a big fan of HTML, nor CSS - webdesign might as well be the worst thing that has ever happened to me, but alas</p>
 	<hr>
 	<h3> Things I enjoy: </h3>
 	<ul>
@@ -16,4 +91,15 @@
 	</ul>
 	<hr>
 	<h2>Here is a picture of my cat, he is a big fan of Scheme I heard</h2>
+	<img src="cat.jpg" alt="Eckhardt" class="center">
+	<hr>
+	<h3>If I have to be honest, I do not think I have a favourite programming language myself. I use different ones for different things - Ruby (yes very funny, I know) for general use, C# for windows-related projects and Scheme for making little domain-specific languages. I am currently learning Rust so we shall see how that goes.</h3>
+	<hr>
+	<h2>Current Projects:</h2>
+		<ul>
+			<li>Learn Rust using The Book and Rustlings</li>
+			<li>Set up a script that automatically syncs changes in my .zshrc and .tmux.conf between my main machine and the work laptop</li>
+			<li>Fully restore my 1999 ThinkPad 600e, the CMOS battery is already on the way</li>
+			<li>Placeholder</li>
+	</div>
 </body>
